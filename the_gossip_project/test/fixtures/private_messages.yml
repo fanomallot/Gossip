@@ -2,12 +2,10 @@
 
 one:
   content: MyText
-  user: one
-  sender: one
   recipient: one
+  sender: one
 
 two:
   content: MyText
-  user: two
-  sender: two
   recipient: two
+  sender: two
