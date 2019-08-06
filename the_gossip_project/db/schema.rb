@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_06_054247) do
+ActiveRecord::Schema.define(version: 2019_08_06_123759) do
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_08_06_054247) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.text "content"
+    t.string "content"
     t.integer "gossip_id", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -40,14 +40,12 @@ ActiveRecord::Schema.define(version: 2019_08_06_054247) do
 
   create_table "private_messages", force: :cascade do |t|
     t.text "content"
-    t.integer "user_id", null: false
-    t.integer "sender_id", null: false
-    t.integer "recipient_id", null: false
+    t.integer "recipient_id"
+    t.integer "sender_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["recipient_id"], name: "index_private_messages_on_recipient_id"
     t.index ["sender_id"], name: "index_private_messages_on_sender_id"
-    t.index ["user_id"], name: "index_private_messages_on_user_id"
   end
 
   create_table "relations", force: :cascade do |t|
@@ -68,9 +66,9 @@ ActiveRecord::Schema.define(version: 2019_08_06_054247) do
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.text "desciption"
-    t.string "email"
+    t.text "description"
     t.integer "age"
+    t.string "email"
     t.integer "city_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -80,9 +78,6 @@ ActiveRecord::Schema.define(version: 2019_08_06_054247) do
   add_foreign_key "comments", "gossips"
   add_foreign_key "comments", "users"
   add_foreign_key "gossips", "users"
-  add_foreign_key "private_messages", "recipients"
-  add_foreign_key "private_messages", "senders"
-  add_foreign_key "private_messages", "users"
   add_foreign_key "relations", "gossips"
   add_foreign_key "relations", "tags"
   add_foreign_key "users", "cities"

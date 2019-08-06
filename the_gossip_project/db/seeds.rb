@@ -23,7 +23,7 @@ c = City.all
 end
 t = Tag.all 
 10.times do
-	User.create(first_name: Faker::Name.first_name , last_name: Faker::Name.last_name, desciption: Faker::Hipster.paragraph(sentence_count: 2), email: Faker::Internet.email , age: Faker::Number.between(from: 18 , to: 50) , city: c[rand(0..9)])
+	User.create(first_name: Faker::Name.first_name , last_name: Faker::Name.last_name, description: Faker::Hipster.paragraph(sentence_count: 2), email: Faker::Internet.email , age: Faker::Number.between(from: 18 , to: 50) , city: c[rand(0..9)])
 end
 u = User.all 
 20.times do

@@ -3,15 +3,15 @@
 one:
   first_name: MyString
   last_name: MyString
-  desciption: MyText
-  email: MyString
+  description: MyText
   age: 1
+  email: MyString
   city: one
 
 two:
   first_name: MyString
   last_name: MyString
-  desciption: MyText
-  email: MyString
+  description: MyText
   age: 1
+  email: MyString
   city: two
