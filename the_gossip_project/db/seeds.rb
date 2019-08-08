@@ -6,13 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
-User.destroy_all
-City.destroy_all
-Gossip.destroy_all
-Tag.destroy_all
-PrivateMessage.destroy_all
 Comment.destroy_all
 Relation.destroy_all
+PrivateMessage.destroy_all
+Gossip.destroy_all
+User.destroy_all
+City.destroy_all
+Tag.destroy_all
 
 10.times do 
 	City.create(name: Faker::Address.city , zip_code: Faker::Address.zip_code) 
